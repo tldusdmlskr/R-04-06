@@ -51,3 +51,17 @@ exam %>%
   mutate (total = math + english + science) %>% #총합 변수 추가
   arrange(total) %>%
   head # 일부 추출 
+
+exam %>% summarise(mean_math = mean(math)) #math 평균 산출
+
+exam %>%
+  group_by(class) %>% #class별로 분리 
+  summarise(mean_math = mean(math)) #math 평균 산출 
+
+exam %>%
+  group_by(class) %>% #class별로 분리 
+  summarise(mean_math = mean(math),
+            sum_math = sum(math),
+            median_math = median(math),
+            n = n()) 
+
