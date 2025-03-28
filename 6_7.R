@@ -11,4 +11,11 @@ test2 #test2 출력
 total <- left_join(test1, test2, by = "id")
 total
 
+name <- data.frame(class = c(1, 2, 3, 4, 5),
+                   teacher = c("kim", "lee", "park", "choi", "jung"))
 name
+
+exam_row <- left_join(exam, name, by = "class")
+exam_row
+
+
